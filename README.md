@@ -1,4 +1,4 @@
-# GoogleITAutomation
+# Google IT Automation with Python Course
 
 ## Final Project Problem Statement
 Okay, here's the scenario:
