@@ -1,7 +1,7 @@
 # Google IT Automation with Python Course
 
 ## Final Project Problem Statement
-Okay, here's the scenario:
+Here's the scenario:
 
 You work for an online fruit store, and you need to develop a system that will update the catalog information with data provided by your suppliers. When each supplier has new products for your store, they give you an image and a description of each product.
 
