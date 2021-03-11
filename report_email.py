@@ -6,7 +6,7 @@ import emails
 
 os.chdir("./supplier-data/descriptions")
 
-res = []
+name_list = []
 wt = []
 
 for file in os.listdir("."):
@@ -15,15 +15,16 @@ for file in os.listdir("."):
     with open(file, "r") as f:
         name = f.readline().strip()
         weight = f.readline().strip()
-    res.append('name: ' + name)
+    name_list.append('name: ' + name)
     wt.append('weight: ' + weight)
 
     new_obj = ""
 
-    for i in range(len(res)):
-        new_obj += res[i] + '<br />' + wt[i] + '<br />' + '<br />'
+    for i in range( len(name_list) ):
+        new_obj += name_list[i] + '<br />' + wt[i] + '<br />' + '<br />'
 
 if __name__ == "__main__":
+    user = os.getenv('USER')
     today = date.today()
     d = today.strftime("%B %d, %Y")
     attachment = "/tmp/processed.pdf"
@@ -39,5 +40,5 @@ if __name__ == "__main__":
     reports.generate_report(attachment, title, paragraph)
     subject = """Upload Completed - Online Fruit Store"""
     body = """All fruits are uploaded to our website successfully. A detailed list is attached to this email."""
-    emails.generate_email("automation@example.com", "student-02-786f685f7eff@example.com", subject, body, attachment)
+    emails.generate_email("automation@example.com", user+"@example.com", subject, body, attachment)
     emails.send_email()
